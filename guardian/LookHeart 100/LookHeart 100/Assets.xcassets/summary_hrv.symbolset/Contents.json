@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "symbols" : [
+    {
+      "filename" : "ecg_heart-ecg_heart_symbol.svg",
+      "idiom" : "universal"
+    }
+  ]
+}

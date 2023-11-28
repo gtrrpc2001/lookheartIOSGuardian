@@ -1,0 +1,264 @@
+"app_name" = "LOOKHEART GUARDIAN";
+
+//  Login Activity
+"title_activity_login" = "LOOKHEART";
+"titleText" = "LOOKHEART";
+"loginLabel" = "Log in";
+"loginText" = "This is the LOOKHEART app for guardians.\nPlease enter your user ID and password.";
+"email_Label" = "E-mail";
+"email_Hint" = "Please enter your email";
+"password_Label" = "Password";
+"password_Hint" = "Please enter a password";
+"guardian_Label" = "Guardian phone number(excluding '-')";
+"guardian_Hint" = "Enter your phone number";
+"autoLogin" = "Auto-Login";
+"findEmailPassword" = "Find ID/PW";
+"signupHelpText" = "Is this your first time using LOOKHEART?";
+"signupButton" = "Sign up";
+"title_activity_signup_first" = "activity_signup_first";
+"lignAlert" = "Please enter the user information and guardian\'s number.";
+"loginFailed" = "Login Failed";
+"incorrectlyLogin" = "You entered your email or password incorrectly";
+"ok" = "OK";
+"serverErr" = "The server failed to verify the data.";
+"loginSuccess" = "Login Success!";
+
+// SignUp first
+"signup1" = "Sign up 1/4";
+"agree" = "Agree";
+"back" = "Go back";
+"next" = "Next";
+
+// SignUp Second
+"signup2" = "Sign up 2/4";
+
+//SignUp third
+"signup3" = "Sign up 3/4";
+"id_Label" = "Enter ID(E-mail)";
+"pw_Label" = "Enter Password";
+"rpw_Label" = "Re-enter password";
+"emailHelp" = "Please enter a valid email";
+"passwordHelp" = "Password of at least 10 characters including uppercase letters, lowercase letters, numbers, and special characters";
+"reEnterPasswordHelp" = "Passwords do not match";
+
+// SignUp fourth
+"signup4" = "Sign up 4/4";
+"name_Label" = "Name";
+"height_Label" = "Height (cm)";
+"weight_Label" = "Weight (kg)";
+"male_Label" = "Male";
+"birthday_Label" = "Birth Date";
+"female_Label" = "Female";
+"signup_complete" = "Sign up completed";
+"nameHelp" = "Please enter the correct name";
+"heightHelp" = "Please enter correct height";
+"weightHelp" = "Please enter your correct weight";
+
+// Home
+"rest" = "R";
+"exercise" = "A";
+"sleep" = "S";
+"arr" = "I.H.R.";
+"eCal" = "Activity cal";
+"eCalValue" = "0 kcal";
+"kcalValue" = "kcal";
+
+"step" = "Steps";
+"stepValue" = "0 step";
+"stepValue2" = "step";
+
+"temperature" = "Skin temp";
+"temperatureValue" = "- °C";
+"temperatureValue2" = "°C";
+
+"distance" = "Distance";
+"distanceM" = "Distance (m)";
+"distanceValue" = "0.000 km";
+"distanceValue3" = "0 km";
+"distanceValue2" = "km";
+"distanceM2" = "m";
+
+"yesterdayArr" = "than yesterday";
+"moreArr" = "more";
+"lessArr" = "less";
+
+"arrStatusGood" = "GOOD";
+"arrStatusCaution" = "CAUT";
+"arrStatusWarning" = "WARN";
+
+"time" = "time";
+"loadUserData" = "Receiving user data.";
+"failLoadUserData" = "Failed to receive user data.";
+
+"sucBpmData" = "BPM data has been received.";
+"failBpmData" = "BPM data was not received.";
+
+"sucDailyData" = "Daily data has been received.";
+"failDailyData" = "Daily data was not received.";
+
+"sucArrData" = "I.H.R. data has been received.";
+"failArrData" = "I.H.R. data was not received.";
+
+"noti" = "Notification";
+
+"basedOn" = "Based on: Yesterday";
+
+// summary
+"summaryBpm" = "Bpm";
+"summaryArr" = "I.H.R.";
+"summaryCal" = "Calorie";
+"summaryStep" = "Step";
+"summaryHRV" = "HRV";
+
+"today" = "Today";
+"twoDays" = "2 Days";
+"threeDays" = "3 Days";
+
+"home_maxBpm" = "Max";
+"home_minBpm" = "Min";
+"home_avgBpm" = "Avg";
+"home_hrv" = "HRV";
+"home_hrv_unit" = "ms";
+
+// summaryArr
+"arrTimes" = "I.H.R.\n(times/Day)";
+
+// summaryCal
+"summaryTCal" = "Total calories (kcal)";
+"summaryECal" = "Activity calories (kcal)";
+"tCalTitle" = "Total calories";
+"eCalTitle" = "Activity calories";
+
+
+// summaryHRV
+"avgHRV" = "Average";
+
+// summaryBPM
+"avgBPM" = "Average";
+
+// ArrFragment
+"arrState" = "Status :";
+"arrType" = "Type :";
+
+"typeArr" = "I.H.R.";
+"typeFastArr" = "Fast heart rhythm";
+"typeSlowArr" = "Slow heart rhythm";
+"typeHeavyArr" = "Heavy I.H.R.";
+
+// guardian
+"setGuardianComp" = "Finish setting up guardians";
+"setGuardianFail" = "Failed to set up a guardian\nPlease try again";
+"setupGuardian" = "Set up guardians";
+"setupGuardianTxt" = "Please enter your cell phone number correctly";
+
+// Fragment
+"fragment_day" = "Day";
+"fragment_week" = "Week";
+"fragment_month" = "Month";
+"fragment_year" = "Year";
+
+"fragment_bpm" = "BPM";
+"fragment_hrv" = "ms";
+
+// HOME Fragment
+"exit" = "Exit?";
+"exit2" = "Exit";
+"homeECal" = "Activity cal";
+
+// ProfileFragment
+"logout" = "LOGOUT";
+"logoutHelp" = "Do you want to log out?";
+"rejectLogout" = "Cancel";
+"sir" = " ";
+"basic" = "Profile";
+"target" = "Target";
+"setting" = "Setting";
+"joinDate" = "Join Date";
+"saveData" = "Saved";
+
+"profile_HelpInfo" = "All personal information\nyou enter is encrypted and safely managed.";
+"profile_HelpInfo1" = "All personal information";
+"profile_HelpInfo2" = "you enter is encrypted and safely managed.";
+"profile_HelpInfo3" = "In the event of an emergency in the Lookheart app,";
+"profile_HelpInfo4" = "a text message will be sent to the guardian\'s saved phone number.";
+"profile_save" = "Save";
+
+// NOTIFICATION
+"notiTypeArr" = "I.H.R. detected!\n";
+"notiTypeFastArr" = "Fast heart rhythm detected!\n";
+"notiTypeSlowArr" = "Slow heart rhythm detected!\n";
+"notiTypeHeavyArr" = "Heavy I.H.R. detected!\n";
+
+"notiTypeMyo" = "Myo-activity detected!\n";
+"notiTypeNonContact" = "Electrode detached detected!\n";
+
+"arrCnt50" = "I.H.R. occurred 50 times today!";
+"arrCnt50Text" = "Please check the user\'s condition.";
+
+"arrCnt100" = "I.H.R. occurred 100 times today!";
+"arrCnt100Text" = "Suggest the user take a rest.";
+
+"arrCnt200" = "I.H.R. occurred 200 times today!";
+"arrCnt200Text" = "Consider consulting with a medical staff";
+
+"arrCnt300" = "I.H.R. occurred 300 times today!";
+"arrCnt300Text" = "Consider consulting with a medical staff";
+
+"notiTime" = "Time :";
+
+"notiHourlyArr10" = "Attention: 10 I.H.R. detected!";
+"notiHourlyArr10Text" = "Check for stress or fatigue.";
+
+"notiHourlyArr20" = "Warning: 20 I.H.R. detected";
+"notiHourlyArr20Text" = "Check for persistent fatigue or other symptoms.";
+
+"notiHourlyArr30" = "Emergency: 30 I.H.R. detected!";
+"notiHourlyArr30Text" = "Consider consulting a medical staff.";
+
+"notiHourlyArr50" = "Danger: 50 I.H.R. detected!";
+"notiHourlyArr50Text" = "Consider consulting a medical staff";
+
+// emergency
+"emergency" = "Emergency";
+"emergencyLocation" = "Emergency Location: ";
+"occurrenceTime" = "Occurrence Time: ";
+"occurrenceLocation" = "Occurrence Location: ";
+
+// battery
+"setBatTitle" = "Requires disabling battery optimisation";
+"setBatMessage" = "This app requires battery optimisation to be disabled for normal operation.\nTap \'OK\' to continue.";
+
+// Foreground Service
+"serviceRunning" = "Running";
+
+// Permission
+"permissionToast" = "Not allowing all permissions\nSome features are limited";
+"goToSettings" = "Go to Settings";
+
+
+// Day of the week
+"Monday" = "MON";
+"Tuesday" = "Tue";
+"Wednesday" = "Wed";
+"Thursday" = "Thu";
+"Friday" = "Fri";
+"Saturday" = "Sat";
+"Sunday" = "Sun";
+
+// bottom menu
+"bottomHome" = "home";
+"bottomSummary" = "Summary";
+"bottomArr" = "IHR";
+"bottomProfile" = "Profile";
+
+// profile
+"profile_phone" = "Phone Number";
+"profile_guardian" = "Guardian Number";
+"profile_age" = "Age";
+"profile_gender" = "Gender";
+"profile_height" = "Height";
+"profile_weight" = "Weight";
+"profile_sleep" = "Bed time";
+"profile_wakeup" = "Wake up time";
+"profile_on" = "ON";
+"profile_off" = "OFF";

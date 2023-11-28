@@ -1,0 +1,4 @@
+
+protocol Refreshable {
+    func refreshView()
+}
