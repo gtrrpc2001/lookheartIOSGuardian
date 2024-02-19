@@ -1,4 +1,5 @@
 import Foundation
+import LookheartPackage
 import FirebaseMessaging
 import UIKit
 
@@ -121,6 +122,7 @@ class ProfileVC: BaseViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
    }()
+    
     @objc func logoutEvent(_ sender: UIButton) {
         let alert = UIAlertController(title: "logout".localized(), message: "logoutHelp".localized(), preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "ok".localized(), style: .destructive, handler: { Action in
@@ -130,8 +132,10 @@ class ProfileVC: BaseViewController {
             UserDefaults.standard.set(false, forKey: "autoLoginFlag")
             
             if let navigationController = self.navigationController {
+                                                
                 let newViewController = LoginView()
                 navigationController.setViewControllers([newViewController], animated: true)
+                
             }
         })
         
@@ -692,76 +696,63 @@ class ProfileVC: BaseViewController {
     }
         
     //MARK: - setUserData
-    private func setUserData(){
-        nameLabel.text = UserProfileManager.shared.getName()
-        emailLabel.text = UserProfileManager.shared.getEmail()
-        signupDate.text = UserProfileManager.shared.getSignupDate()
-        userNameLabel.text = UserProfileManager.shared.getName()
-        phoneLabel.text = UserProfileManager.shared.getPhoneNumber()
-        guardianLabel.text = Keychain.shared.getString(forKey: "phone")
-        birthdayLabel.text = UserProfileManager.shared.getBirthDate()
-        genderLabel.text = UserProfileManager.shared.getGender() == "남자" ? "male_Label".localized() : "female_Label".localized()
-        heightLabel.text = UserProfileManager.shared.getHeight()
-        weightLabel.text = UserProfileManager.shared.getWeight()
-        sleepLabel.text = String(UserProfileManager.shared.getBedtime())
-        wakeupLabel.text = String(UserProfileManager.shared.getWakeUpTime())
+    private func setUserData() {
         
-        if let age = setAge(birthdate: UserProfileManager.shared.getBirthDate()) {
+        func setAge(birthdate: String) -> Int? {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            guard let birthDate = dateFormatter.date(from: birthdate) else {
+                return nil
+            }
+            let calendar = Calendar.current
+            let ageComponents = calendar.dateComponents([.year], from: birthDate, to: Date())
+            return ageComponents.year
+        }
+        
+        nameLabel.text = propProfil.name
+        emailLabel.text = propEmail
+        signupDate.text = propProfil.joinDate
+        userNameLabel.text = propProfil.name
+        phoneLabel.text = propProfil.phone
+        guardianLabel.text = Keychain.shared.getString(forKey: "phone")
+        birthdayLabel.text = propProfil.birthDate
+        genderLabel.text = propProfil.gender == "남자" ? "male_Label".localized() : "female_Label".localized()
+        heightLabel.text = propProfil.height
+        weightLabel.text = propProfil.weight
+        sleepLabel.text = String(propProfil.bedTime)
+        wakeupLabel.text = String(propProfil.wakeUpTime)
+        
+        if let age = setAge(birthdate: propProfil.birthDate) {
             ageLabel.text = String(age)
         } else {
-            ageLabel.text = UserProfileManager.shared.getAge()
+            ageLabel.text = propProfil.age
         }
      }
     
-    private func setAge(birthdate: String) -> Int? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        guard let birthDate = dateFormatter.date(from: birthdate) else {
-            return nil
-        }
-        let calendar = Calendar.current
-        let ageComponents = calendar.dateComponents([.year], from: birthDate, to: Date())
-        return ageComponents.year
-    }
-    
     // MARK: - initUserData
-    func initUserData(){
-        let email = Keychain.shared.getString(forKey: "email")!
-        let password = Keychain.shared.getString(forKey: "password")!
-        let phone = Keychain.shared.getString(forKey: "phone")!
+    private func initUserData() {
         
-        initTokenServerTask(email: email, password: password, phone: phone) { success in
-            if success {
-                print("init token success")
-            } else {
-                print("init token fail")
-            }
+        // Send Log
+        if let guardian = Keychain.shared.getString(forKey: "phone") {
+            NetworkManager.shared.sendLog(id: propEmail, userType: .Guardian, action: .Logout, phone: guardian)
         }
         
-        if (Keychain.shared.clear()){
-            print("Keychain clear")
+        // init FCM Token
+        Keychain.shared.setValue("", forKey: "token")
+        
+        FCM.shared.sendToken()
+        
+        // init User Data
+        if Keychain.shared.clear() {
+            print("User Data Keychain Clear")
+        }
+        
+        if Keychain.shared.setBool(false, forKey: "login") {
+            print("Init Login Flag")
         }
     }
     
-    func initTokenServerTask(email: String, password: String, phone: String, completion: @escaping (Bool) -> Void) {
-        NetworkManager.shared.sendToken(id: email, password: password, phone: phone, token: "") { result in
-            switch result {
-            case .success(let isAvailable):
-                
-                if Keychain.shared.setBool(true, forKey: "logout"){
-                    print("setBool : true, forkey: logout")
-                }
-                completion(isAvailable)
-                
-                break
-            case .failure(let error):
-                print("Error: \(error.localizedDescription)")
-                completion(false)
-                break
-            }
-        }
-    }
     
     //MARK: - layout
     func addViews(){
@@ -770,6 +761,10 @@ class ProfileVC: BaseViewController {
         view.addSubview(scrollView)
         
         topBackground.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
+            
+        }
+        
         topBackground.addSubview(sirLabel)
         topBackground.addSubview(emailTitleLabel)
         topBackground.addSubview(emailLabel)

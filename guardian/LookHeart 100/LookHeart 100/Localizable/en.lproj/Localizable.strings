@@ -17,11 +17,14 @@
 "signupButton" = "Sign up";
 "title_activity_signup_first" = "activity_signup_first";
 "lignAlert" = "Please enter the user information and guardian\'s number.";
+"failLogin" = "Please enter the user's information accurately.";
+
 "loginFailed" = "Login Failed";
 "incorrectlyLogin" = "You entered your email or password incorrectly";
 "ok" = "OK";
 "serverErr" = "The server failed to verify the data.";
 "loginSuccess" = "Login Success!";
+"duplicateLogin" = "You are being logged in from another location. \nPlease log out of the existing ID and log in again.";
 
 // SignUp first
 "signup1" = "Sign up 1/4";
@@ -72,7 +75,7 @@
 "temperatureValue2" = "°C";
 
 "distance" = "Distance";
-"distanceM" = "Distance (m)";
+"distanceM" = "Distance";
 "distanceValue" = "0.000 km";
 "distanceValue3" = "0 km";
 "distanceValue2" = "km";
@@ -124,8 +127,8 @@
 "arrTimes" = "I.H.R.\n(times/Day)";
 
 // summaryCal
-"summaryTCal" = "Total calories (kcal)";
-"summaryECal" = "Activity calories (kcal)";
+"summaryTCal" = "Total calories";
+"summaryECal" = "Activity calories";
 "tCalTitle" = "Total calories";
 "eCalTitle" = "Activity calories";
 
@@ -262,3 +265,12 @@
 "profile_wakeup" = "Wake up time";
 "profile_on" = "ON";
 "profile_off" = "OFF";
+
+// Firebase Flag
+"FirebaseEmergency" = "emergency";
+"FirebaseUserBle" = "bluetooth";
+"FirebaseBleConnect" = "BleConnect";
+"FirebaseBleDisconnect" = "BleDisconnect";
+
+// BLE
+"BleDisconnected" = "The user has not worn the device.\nLast used time: ";

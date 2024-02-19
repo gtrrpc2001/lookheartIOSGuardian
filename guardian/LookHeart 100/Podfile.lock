@@ -1,9 +1,4 @@
 PODS:
-  - Alamofire (5.8.0)
-  - CryptoSwift (1.8.0)
-  - DGCharts (5.0.0):
-    - DGCharts/Core (= 5.0.0)
-  - DGCharts/Core (5.0.0)
   - Firebase/CoreOnly (10.17.0):
     - FirebaseCore (= 10.17.0)
   - Firebase/Messaging (10.17.0):
@@ -57,27 +52,13 @@ PODS:
   - nanopb/decode (2.30909.1)
   - nanopb/encode (2.30909.1)
   - PromisesObjC (2.3.1)
-  - SnapKit (5.0.1)
-  - Then (2.7.0)
-  - TinyConstraints (4.0.1)
-  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.4)
-  - CryptoSwift
-  - DGCharts
   - Firebase/Messaging
   - KeychainSwift
-  - SnapKit
-  - Then
-  - TinyConstraints
-  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - CryptoSwift
-    - DGCharts
     - Firebase
     - FirebaseCore
     - FirebaseCoreInternal
@@ -88,15 +69,8 @@ SPEC REPOS:
     - KeychainSwift
     - nanopb
     - PromisesObjC
-    - SnapKit
-    - Then
-    - TinyConstraints
-    - Toast-Swift
 
 SPEC CHECKSUMS:
-  Alamofire: 0e92e751b3e9e66d7982db43919d01f313b8eb91
-  CryptoSwift: 52aaf3fce7337552863b1d952e408085f0e65030
-  DGCharts: 6e0cf2644e8f81ad13f04caa8bc18502870a1c54
   Firebase: f4ac0b02927af9253ae094d23deecf0890da7374
   FirebaseCore: 534544dd98cabcf4bf8598d88ec683b02319a528
   FirebaseCoreInternal: 2cf9202e226e3f78d2bf6d56c472686b935bfb7f
@@ -107,11 +81,7 @@ SPEC CHECKSUMS:
   KeychainSwift: 0ce6a4d13f7228054d1a71bb1b500448fb2ab837
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  Then: acfe0be7e98221c6204e12f8161459606d5d822d
-  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: eac21fc27b9937284169664a88ad2ca5dd52818e
+PODFILE CHECKSUM: 084015220031d83adf22392927194b7ebf689d2c
 
-COCOAPODS: 1.13.0
+COCOAPODS: 1.14.3

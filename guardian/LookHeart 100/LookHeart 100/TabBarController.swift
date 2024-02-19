@@ -6,7 +6,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBar.tintColor = UIColor(red: 239/255, green: 80/255, blue: 123/255, alpha: 1.0)
+        self.tabBar.tintColor = UIColor.MY_RED
         self.tabBar.unselectedItemTintColor = .gray
         
         let homeVC = UINavigationController(rootViewController: MainViewController())

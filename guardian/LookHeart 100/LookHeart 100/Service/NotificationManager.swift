@@ -1,5 +1,6 @@
 import UserNotifications
 import UIKit
+import LookheartPackage
 
 class NotificationManager {
     
@@ -22,8 +23,6 @@ class NotificationManager {
         content.sound = notiSound   // set sound
         totalArrAlertFlag = defaults.bool(forKey: "totalArrAlert")
         hourlyArrAlertFlag = defaults.bool(forKey: "hourlyArrAlert")
-        print(totalArrAlertFlag)
-        print(hourlyArrAlertFlag)
     }
     
     func sendNotification(title: String, message: String) {
@@ -46,14 +45,20 @@ class NotificationManager {
         }
     }
     
-    func emergencyAlert(occurrenceTime: String, location: String) {
+    public func emergencyAlert(occurrenceTime: String, location: String) {
         if let emergencyAlert = getTopViewController() as? EmergencyAlert {
-            emergencyAlert.updateEmergencyAlert(occurrenceTime: occurrenceTime, location: location)
+            emergencyAlert.updateText(title: "emergency".localized(), time: occurrenceTime, location: location)
         } else {
-            let emergencyAlert = EmergencyAlert(arrFlag: false)
-            emergencyAlert.occurrenceLabel.text = occurrenceTime
-            emergencyAlert.messageLabel.text = location
+            let emergencyAlert = EmergencyAlert(title: "emergency".localized(), time: occurrenceTime, location: location)
             presentAlert(emergencyAlert)
+        }
+    }
+    
+    func presentAlert(_ emergencyAlert: EmergencyAlert) {
+        emergencyAlert.modalPresentationStyle = .overCurrentContext
+        emergencyAlert.modalTransitionStyle = .crossDissolve
+        if let topController = getTopViewController() {
+            topController.present(emergencyAlert, animated: true)
         }
     }
     
@@ -136,22 +141,14 @@ class NotificationManager {
             return
         }
         
-        if let emergencyAlert = topViewController.presentedViewController as? EmergencyAlert {
-            emergencyAlert.updateArrAlert(arrTitle: title, arrMessage: message)
-        } else {
-            let emergencyAlert = EmergencyAlert(arrFlag: true)
-            emergencyAlert.titleLabel.text = title
-            emergencyAlert.occurrenceTitle.text = message
-            presentAlert(emergencyAlert)
-        }
-    }
-    
-    func presentAlert(_ emergencyAlert: EmergencyAlert) {
-        emergencyAlert.modalPresentationStyle = .overCurrentContext
-        emergencyAlert.modalTransitionStyle = .crossDissolve
-        if let topController = getTopViewController() { // 최상위 뷰를 찾아 알림 띄움 : 모든 뷰에서 알림
-            topController.present(emergencyAlert, animated: true)
-        }
+//        if let emergencyAlert = topViewController.presentedViewController as? EmergencyAlert {
+//            emergencyAlert.updateArrAlert(arrTitle: title, arrMessage: message)
+//        } else {
+//            let emergencyAlert = EmergencyAlert(arrFlag: true)
+//            emergencyAlert.titleLabel.text = title
+//            emergencyAlert.occurrenceTitle.text = message
+//            presentAlert(emergencyAlert)
+//        }
     }
     
     func returnCheck(arrFlag: Int, flagList: inout [Bool]) -> Bool {
@@ -161,6 +158,7 @@ class NotificationManager {
     }
     
     func getTopViewController() -> UIViewController? {
+        // 최상위 뷰를 찾아 알림 띄움 : 모든 뷰에서 알림
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let rootViewController = windowScene.windows.first?.rootViewController else {
             return nil
@@ -175,8 +173,6 @@ class NotificationManager {
     }
     
     func setNotiUserdefault() {
-        print(totalArrAlertFlag)
-        print(hourlyArrAlertFlag)
         defaults.set(totalArrAlertFlag, forKey: "totalArrAlert")
         defaults.set(hourlyArrAlertFlag, forKey: "hourlyArrAlert")
     }

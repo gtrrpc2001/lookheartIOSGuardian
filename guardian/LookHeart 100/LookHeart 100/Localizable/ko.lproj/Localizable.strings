@@ -21,11 +21,15 @@
 "signupButton" = "회원가입";
 
 "lignAlert" = "사용자 정보와 보호자 번호를 입력하세요";
+
+"failLogin" = "사용자의 정보를 정확하게 입력해주세요";
+
 "loginFailed" = "로그인 실패";
 "incorrectlyLogin" = "이메일 또는 비밀번호를 잘못 입력했습니다.";
 "ok" = "확인";
 "serverErr" = "서버에서 데이터를 확인하지 못했습니다.";
 "loginSuccess" = "로그인 성공!";
+"duplicateLogin" = "다른 곳에서 로그인 중입니다. \n기존 아이디를 로그아웃하고 로그인해주세요.";
 
 // SignUp first
 "signup1" = "회원가입 1/4";
@@ -71,12 +75,12 @@
 "stepValue" = "0 step";
 "stepValue2" = "step";
 
-"temperature" = "전극온도";
+"temperature" = "피부온도";
 "temperatureValue" = "- °C";
 "temperatureValue2" = "°C";
 
 "distance" = "걸음거리";
-"distanceM" = "거리 (m)";
+"distanceM" = "거리";
 "distanceValue" = "0.000 km";
 "distanceValue3" = "0 km";
 "distanceValue2" = "km";
@@ -127,8 +131,8 @@
 "arrTimes" = "비정상맥박\n(times/Day)";
 
 // summaryCal
-"summaryTCal" = "총 칼로리 (kcal)";
-"summaryECal" = "활동 칼로리 (kcal)";
+"summaryTCal" = "총 칼로리";
+"summaryECal" = "활동 칼로리";
 "tCalTitle" = "총 칼로리";
 "eCalTitle" = "활동 칼로리";
 
@@ -224,8 +228,8 @@
 // emergency
 "emergency" = "응급 상황";
 "emergencyLocation" = "응급 위치: ";
-"occurrenceTime" = "발생 시간: ";
-"occurrenceLocation" = "발생 위치: ";
+"occurrenceTime" = "시간 : ";
+"occurrenceLocation" = "위치 : ";
 
 // battery
 "setBatTitle" = "배터리 최적화 비활성화 필요";
@@ -263,3 +267,13 @@
 "profile_wakeup" = "기상시간";
 "profile_on" = "사용";
 "profile_off" = "해제";
+
+
+// Firebase Keyword
+"FirebaseEmergency" = "긴급";
+"FirebaseUserBle" = "블루투스";
+"FirebaseBleConnect" = "연결";
+"FirebaseBleDisconnect" = "해제";
+
+// BLE
+"BleDisconnected" = "사용자가 장치를 착용하지 않았습니다.\n마지막 사용 시간: ";

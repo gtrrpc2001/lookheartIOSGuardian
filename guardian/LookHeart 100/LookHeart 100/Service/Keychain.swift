@@ -18,6 +18,10 @@ class Keychain {
         return keychain.set(value, forKey: key)
     }
     
+    func setValue(_ value: String, forKey key: String) {
+        keychain.set(value, forKey: key)
+    }
+    
     // 데이터를 검색하는 함수
     func getString(forKey key: String) -> String? {
         return keychain.get(key) // 값이 없을 경우 nil 반환, 이는 옵셔널을 사용하여 처리
@@ -28,10 +32,9 @@ class Keychain {
         return keychain.set(value, forKey: key)
     }
     
-    // 데이터를 검색하는 함수
     func getBool(forKey key: String) -> Bool {
-        guard let stringValue = keychain.get(key) else { return false }
-        return Bool(stringValue) ?? false
+        guard let value = keychain.get(key) else { return false }
+        return Bool(value) ?? false
     }
     
     // 데이터를 삭제하는 함수

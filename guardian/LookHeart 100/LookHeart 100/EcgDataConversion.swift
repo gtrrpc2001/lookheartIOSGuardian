@@ -16,7 +16,29 @@ class EcgDataConversion {
     private var xx_itx:[Float] = Array(repeating: 0.0, count: 13)
     private var xx_ecgarray:[Float] = Array(repeating: 0.0, count: 13)
     
+    private var changeEcgData:[Double] = Array(repeating: 512.0, count: 2)
+    
     static let shared = EcgDataConversion()
+    
+    func changeEcgData(_ ecg: Double) -> Double {
+        changeEcgData[1] = changeEcgData[0]
+        changeEcgData[0] = ecg
+         
+        var calcEcgData = changeEcgData[1] - changeEcgData[0]
+         
+        if abs(calcEcgData) <= 50 {
+            calcEcgData = 0
+        }
+        
+        if changeEcgData[1] == changeEcgData[0] {
+            calcEcgData = changeEcgData[0] <= 10 ? 3 :
+                          changeEcgData[0] >= 1000 ? 1000 : calcEcgData + 512
+        } else {
+            calcEcgData = calcEcgData + 512
+        }
+        
+        return calcEcgData
+     }
     
     func setPeakData(_ ecgData:Int) -> Int64 {
         
