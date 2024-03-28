@@ -1,17 +1,9 @@
-//
-//  NetworkManager.swift
-//  LookHeart 100
-//
-//  Created by 정연호 on 2023/10/12.
-//
-
 import Foundation
 import Alamofire
 
-class NetworkManager {
-    
-//    private let baseURL = "http://121.152.22.85:40081" // TEST
-    private let baseURL = "http://121.152.22.85:40080"  // Real
+class NetworkManager {   
+
+    private let baseURL = ""
     
     static let shared = NetworkManager()
 
